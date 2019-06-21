@@ -5,25 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- Google Sign In -->
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <meta name="google-signin-client_id" content="601985090513-h9v7e5bhnotafuifg59a3c1vf90gqrub.apps.googleusercontent.com">
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box !important;
+      }
+      html {
+        height: 100% !important;
+      }
+      body {
+        height: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+      }</style>
 </head>
 <body>
     
 
-    <div id="app">
-        <div id="capture" style="padding: 10px; background: #f5da55">
+    <div id="app" class="app">
+        <!-- <div id="capture" style="padding: 10px; background: #f5da55">
             <h4 style="color: #000; ">Hello world!</h4>
             <div>
                 Logo
             </div>
         </div>
         
-        <canvas id="canv" width="200" height="200"></canvas>
+        <canvas id="canv" width="200" height="200"></canvas> -->
         
         <!-- <a @click="screenshot()">
             save
         </a> -->
 
-        <div id="result"></div>
+        <!-- <div id="result"></div>
 
         <form method="post" action="" @submit.prevent="screenshot();">
             <input 
@@ -33,12 +51,24 @@
                 v-model.trim="image_base64"
             >
             <input id="bt_upload" type="submit" value="Download">
-          </form>
+          </form> -->
     </div>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-    <script src="./assets/html2canvas.js"></script>
-    <script src="./assets/vue.js"></script>
+
+    <!-- <div id="app" class="app"></div> -->
+
 </body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- Bootstrap Vue -->
+<script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CMutationObserver" crossorigin="anonymous"></script>
+<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="./assets/html2canvas.js"></script>
+<script src="./assets/vue.js"></script>
+
+<script src="./assets/vue.js"></script>
 </html>

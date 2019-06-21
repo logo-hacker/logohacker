@@ -2,13 +2,12 @@ const User = require('../models/user')
 const Helper = require('../helpers/helper')
 const { OAuth2Client } = require('google-auth-library')
 const client = new OAuth2Client(process.env.CLIENT_ID);
-
 class UserController {
     static register(req, res) {        
-        const {email, password, name} = req.body
+        const {email, password} = req.body
 
         User.create({
-            name, email, password
+            email, password
         })
         .then(user=> {
             res.status(201).json(user)
@@ -49,7 +48,8 @@ class UserController {
             }
         })
         .catch(err => {
-            res.status(400).json({msg: err})
+            console.log(err);
+            res.status(500).json({msg: err})
         })
     }
 
