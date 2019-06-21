@@ -20,9 +20,6 @@
               <a class="nav-link white-link login-button" href="#" @click="rendLogin" v-show="isLogin == false">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" id="user" v-show="isLogin == true">{{user.name}}</a>
-          </li>
-          <li class="nav-item">
               <a class="nav-link white-link" href="#" id="logoff" @click="signOut" v-show="isLogin == true">Logout</a>
           </li>
         </ul>

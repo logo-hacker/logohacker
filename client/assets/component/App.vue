@@ -110,7 +110,7 @@ export default {
       axios({
         method: 'post',
         url: `${BASE_PATH}/users/loginGoogle`,
-        data: {
+        headers: {
           token
         }
       })
@@ -159,7 +159,7 @@ export default {
     },
     rendHome () {
       this.page = "home"
-      this.rendList()
+      // this.rendList()
     },
     errorHandler (error){
       this.notifStat = false
