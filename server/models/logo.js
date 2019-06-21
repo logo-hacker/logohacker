@@ -11,7 +11,7 @@ const logoSchema = new Schema({
         type: String,
         required: true
     },
-    userId : { type: Schema.Types.ObjectId, ref: 'Logo' }
+    // userId : { type: Schema.Types.ObjectId, ref: 'Logo' }
 }, {timestamps:true} );
 
 const Logo = mongoose.model('Logo', logoSchema)

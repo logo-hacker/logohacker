@@ -54,6 +54,12 @@ const Multer = require('multer'),
         // dest: '../images'
       })
 
+const toBlob = (req, res, next) => {
+  req.file.userLogo = formDataToUpload.image
+
+  next()
+}
+
 module.exports = {
   getPublicUrl,
   sendUploadToGCS,
