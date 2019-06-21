@@ -20,13 +20,13 @@
               <a class="nav-link white-link login-button" href="#" @click="rendLogin" v-show="isLogin == false">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" v-show="isLogin == true" @>All Post</a>
+            <a class="nav-link" v-show="isLogin == true" @click="allPost">All Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" v-show="isLogin == true">My Post</a>
+            <a class="nav-link" v-show="isLogin == true" @click="myPost">My Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" v-show="isLogin == true">Create</a>
+            <a class="nav-link" v-show="isLogin == true" @click="createPost">Create</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" id="user" v-show="isLogin == true">{{user.email}}</a>
@@ -61,6 +61,15 @@ export default {
     },
     signOut () {
       this.$emit('signOut')
+    },
+    allPost(){
+      this.$emit('allPost')
+    },
+    myPost(){
+      this.$emit('myPost')
+    },
+    create(){
+      this.$emit('create')
     }
   }
 };
