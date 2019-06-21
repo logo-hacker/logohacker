@@ -20,7 +20,7 @@
               <a class="nav-link white-link login-button" href="#" @click="rendLogin" v-show="isLogin == false">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" v-show="isLogin == true">All Post</a>
+            <a class="nav-link" v-show="isLogin == true" @>All Post</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" v-show="isLogin == true">My Post</a>

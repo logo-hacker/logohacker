@@ -169,7 +169,7 @@ export default {
     },
     errorHandler (error){
       this.notifStat = false
-      if (err.response){
+      if (error.response){
         this.message = error.response.data.message
       } else {
         this.message = `Connection to server error!`
