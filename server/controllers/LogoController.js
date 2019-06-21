@@ -2,11 +2,12 @@ const Logo = require('../models/logo')
 
 class LogoController {
     static create(req, res) {
-        const {name, userId} = req.body
+        const {name} = req.body
+        
         let image_url = req.file.cloudStoragePublicUrl
 
         Logo
-        .create({name,image_url,userId})
+        .create({name,image_url})
         .then(logo => {
             console.log(logo);
             res.status(201).json(logo)

@@ -6,9 +6,12 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.24",
+    "html2canvas": "^1.0.0-rc.3",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
+    "undefined": "^0.1.0",
     "vue": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.3"
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-html2canvas": "0.0.4"
   }
 }
