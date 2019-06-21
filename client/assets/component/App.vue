@@ -2,7 +2,12 @@
   <div class="app">
     <navbar :isLogin="isLogin" :user="user" @signOut="signOut" @rendLogin="rendLogin" @rendRegister="rendRegister"></navbar>
 
-    <register-page :page="page" :newUser="newUser" @register="register" @rendLogin="rendLogin"></register-page>
+    <register-page 
+      :page="page" 
+      :newUser="newUser" 
+      @register="register" 
+      @rendLogin="rendLogin"
+    ></register-page>
   
     <login-page :page="page" :user="user" @login="login" @rendRegister="rendRegister"></login-page>
 
