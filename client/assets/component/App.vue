@@ -16,18 +16,14 @@
 </template>
 
 <script>
+const BASE_PATH = `http://localhost:3000`
+
 import navbar from './navbar.vue'
 import register from './register.vue'
 import login from './login.vue'
 import notifModal from './notif-modal.vue'
-<<<<<<< HEAD
-
-const BASE_PATH = `http://localhost:3000`
-
-=======
 import allLogo from './all-logo'
 import formInput from './form-input'
->>>>>>> main page 2.0
 export default {
   components: {
     'navbar': navbar,
@@ -52,7 +48,7 @@ export default {
       page: "login",
       menu: "list",
       isLogin: false,
-      statusPage: ''
+      statusPage: '',
       pictures:[],
       logoUrl: [],
       text: '',
