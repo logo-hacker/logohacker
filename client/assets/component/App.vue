@@ -297,7 +297,6 @@ export default {
     },
     rendHome () {
       this.page = "home"
-      // this.rendList()
     },
     errorHandler (error){
       this.notifStat = false
