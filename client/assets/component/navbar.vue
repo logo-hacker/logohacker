@@ -26,10 +26,7 @@
             <a class="nav-link" v-show="isLogin == true" @click="myPost">My Post</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" v-show="isLogin == true" @click="createPost">Create</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" id="user" v-show="isLogin == true">{{user.email}}</a>
+            <a class="nav-link" v-show="isLogin == true" @click="create">Create</a>
           </li>
           <li class="nav-item">
               <a class="nav-link white-link" href="#" id="logoff" @click="signOut" v-show="isLogin == true">Logout</a>

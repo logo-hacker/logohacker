@@ -1,7 +1,7 @@
 
 <template>
   <div id="form-input" style="padding-top: 20px;" v-if="statusPage == 'createNew'" class="tab-pane">
-        <form @submit.prevent="createLogo">
+        <form @submit.prevent="createLogo" style="margin: 0 auto; width: 50vw;">
             <div class="form-group row">
                 <label for="inputText" class="col-sm-2 col-form-label">Text</label>
                 <div class="col-sm-10">
@@ -16,13 +16,16 @@
             </div>
             <div class="form-group row" >
                 <label for="inputLogo" class="col-sm-2 col-form-label">Logo</label>
-                <div class="col-sm-10" :key="logo.id" v-for="logo in logoUrl">
-                    <a>
-                         <img :src="logo.url" style="width:10%;">    
+                <div class="col-md-10 d-flex" >
+                    <a @click="selected(index)" :key="logo.id" v-for="(logo, index) in logoUrl">
+                         <img :src="logo" width="75" height="75">    
                     </a>
                 </div>
             </div>
+            <div class="text-center">
+
             <button type="submit" class="btn btn-primary" >Submit</button>
+            </div>
         </form>
     </div>
 </template>
@@ -37,10 +40,19 @@ export default {
     return {
     };
   },
+  methods:{
+      selected(index){
+        this.$emit('selected', index)
+      }
+  }
 };
 </script>
     
 <style scoped>
+    img:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
     .image {
         opacity: 1;
         display: block;
@@ -49,7 +61,6 @@ export default {
         transition: .5s ease;
         backface-visibility: hidden;
     }
-    
     .middle {
         transition: .5s ease;
         opacity: 0;
@@ -60,15 +71,6 @@ export default {
         -ms-transform: translate(-10%, -10%);
         text-align: center;
     }
-    
-    .container:hover .image {
-        opacity: 0.3;
-    }
-    
-    .container:hover .middle {
-        opacity: 1;
-    }
-    
     .text {
         background-color: #4CAF50;
         color: white;

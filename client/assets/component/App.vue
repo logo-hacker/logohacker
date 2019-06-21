@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <navbar :isLogin="isLogin" :user="user" @signOut="signOut" @rendLogin="rendLogin" @rendRegister="rendRegister"></navbar>
+    <navbar :isLogin="isLogin" :user="user" @signOut="signOut" @rendLogin="rendLogin" @rendRegister="rendRegister" @allPost="allPost" @myPost="myPost" @create="create"></navbar>
 
     <register-page :page="page" :newUser="newUser" @register="register" @rendLogin="rendLogin"></register-page>
   
@@ -8,9 +8,9 @@
 
     <notif-modal :notifStat="notifStat" :message="message"></notif-modal>
 
-    <all-logo :pictures="pictures"></all-logo>
+    <all-logo :pictures="pictures" @shareFacebook="shareFacebook" @shareTwitter="shareTwitter" @shareInstagram="shareInstagram"></all-logo>
 
-    <form-input :logoUrl="logoUrl" :text="text" :uploadFile="uploadFile"></form-input>
+    <form-input :logoUrl="logoUrl" :text="text" :uploadFile="uploadFile" @selected="selected" :statusPage="statusPage"></form-input>
 
   </div>
 </template>
@@ -43,13 +43,18 @@ export default {
       },
       notifStat : false,
       message : "",
-      page: "login",
-      menu: "list",
+      page: "home",
+      statusPage: "all-logo",
       isLogin: false,
       pictures:[],
-      logoUrl: [],
+      logoUrl: ["../src/apple.png", 
+      "../src/chrome.png", 
+      "../src/mcd.png",
+      "../src/soundclouds.png",
+      "../src/yutub.png"],
       text: '',
-      uploadFile: ''
+      uploadFile: '',
+      selectedImg: ''
     };
   },
   mounted() {
@@ -165,7 +170,51 @@ export default {
     },
     rendHome () {
       this.page = "home"
-      this.rendList()
+      this.allPost()
+    },
+    allPost(){
+      this.pictures = []
+      let token = localStorage.getItem("token")
+      axios({
+        method: 'get',
+        url: '',
+        headers: {
+          token
+        }
+      })
+      .then(({data}) => {
+        for(let i in data){
+          this.pictures.push(data[i])
+        }
+      })
+      .catch((error) => {
+        this.errorHandler(error)
+      });
+    },
+    myPost(){
+      this.pictures = []
+      let token = localStorage.getItem("token")
+      axios({
+        method: 'get',
+        url: '',
+        headers: {
+          token
+        }
+      })
+      .then(({data}) => {
+        for(let i in data){
+          this.pictures.push(data[i])
+        }
+      })
+      .catch((error) => {
+        this.errorHandler(error)
+      });
+    },
+    create(){
+
+    },
+    selected(index){
+      this.selectedImg = this.logoUrl[index]
     },
     errorHandler (error){
       this.notifStat = false
@@ -176,6 +225,15 @@ export default {
       }
       this.$bvModal.show('notif-modal')
     },
+    shareFacebook(){
+
+    },
+    shareTwitter(){
+
+    },
+    shareInstagram(){
+      
+    }
   }
 };
 </script>
