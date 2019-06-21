@@ -1,10 +1,10 @@
 <template>
-  <div id="form-input" style="padding-top: 20px;" v-if="statusPage === 'createNew'" class="tab-pane">
+  <div id="form-input" style="padding-top: 20px;" v-if="statusPage === 'createNew'" class="tab-pane centering">
         <form @submit.prevent="screenshot()">
             <div class="form-group row">
-                <label for="inputText" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="input name" style="width:25%;" v-model="logo.name"
+                <label for="inputText" class="col-2 col-form-label">Name</label>
+                <div class="col-10">
+                    <input type="text" class="form-control" id="inputText" placeholder="input name" v-model="logo.name"
                     >
                 </div>
         </div>
@@ -24,13 +24,13 @@
             v-model="logo.image_base64" 
             >
 
-            <input id="bt_upload" type="submit" value="Download">
         </form>
 
         <input 
             type="button" 
             id="btnSave" 
-            value="Save PNG"
+            value="Print Logo"
+            @click="print"
         />
 
         <div>
@@ -42,7 +42,11 @@
         </div> -->
 
         <!-- SOURCE CAPTURE-->
-        <div id="capture" style="margin-top:3em; display: flex;" ref="capture">
+        <div style="margin-top: 20px">
+            
+        <p>Logo Preview:</p>
+        </div>
+        <div id="capture" style="display: flex; width: 215px;" ref="capture">
             <img 
                 src="../src/youtube.png"
                 alt="Logo Image"
@@ -50,8 +54,6 @@
             >
             <div style="align-self: center;">{{logo.name}}</div>
         </div>
-
-        <div @click="print">print</div>
 
         <!-- OUTPUT -->
         <div id="output"></div>
@@ -131,6 +133,10 @@ export default {
 </script>
     
 <style scoped>
+.centering {
+    width: 30vw;
+    margin: 0 auto;
+}
     .image {
         opacity: 1;
         display: block;
