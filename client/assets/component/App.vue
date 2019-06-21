@@ -8,6 +8,10 @@
 
     <notif-modal :notifStat="notifStat" :message="message"></notif-modal>
 
+    <all-logo :pictures="pictures"></all-logo>
+
+    <form-input :logoUrl="logoUrl" :text="text" :uploadFile="uploadFile"></form-input>
+
   </div>
 </template>
 
@@ -16,12 +20,16 @@ import navbar from './navbar.vue'
 import register from './register.vue'
 import login from './login.vue'
 import notifModal from './notif-modal.vue'
+import allLogo from './all-logo'
+import formInput from './form-input'
 export default {
   components: {
     'navbar': navbar,
     'register-page' : register,
     'login-page' : login,
     'notif-modal' : notifModal,
+    'all-logo' : allLogo,
+    'form-input' : formInput
   },
   data() {
     return {
@@ -38,6 +46,10 @@ export default {
       page: "login",
       menu: "list",
       isLogin: false,
+      pictures:[],
+      logoUrl: [],
+      text: '',
+      uploadFile: ''
     };
   },
   mounted() {

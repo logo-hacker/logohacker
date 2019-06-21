@@ -16,7 +16,8 @@
 <script>
 export default {
     props:{
-        pictures: Array
+        pictures: Array,
+        statusPage: String
     },
   data() {
     return {

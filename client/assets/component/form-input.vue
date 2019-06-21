@@ -5,13 +5,13 @@
             <div class="form-group row">
                 <label for="inputText" class="col-sm-2 col-form-label">Text</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Text" style="width:25%;">
+                    <input type="text" class="form-control" id="inputText" placeholder="Text" style="width:25%;" v-model="text">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="uploadGambar" class="col-sm-2 col-form-label">Upload Gambar</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="uploadGambar" placeholder="Text" style="width:25%;">
+                    <input type="text" class="form-control" id="uploadGambar" placeholder="Text" style="width:25%;" v-model="uploadFile">
                 </div>
             </div>
             <div class="form-group row" >
@@ -30,7 +30,8 @@
 <script>
 export default {
     props:{
-        logoUrl: Array
+        logoUrl: Array,
+        statusPage: String
     },
   data() {
     return {
