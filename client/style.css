@@ -1,0 +1,48 @@
+body {
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+    font-size: 62.5%;
+    font-variant-ligatures: normal;
+    font-kerning: normal;
+}
+
+li.group{
+    position: relative;
+    width: 220px;
+    float: left;
+    padding: 0;
+    margin: 0 15px 30px 15px;
+        margin-right: 15px;
+        margin-left: 15px;
+}
+.shot-display-option{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px 10px 0 10px;
+    background: #fff;
+    z-index: 2;
+    will-change: transition;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: height 0.2s ease;
+    transition: height 0.2s ease;
+}
+.shot-title-date{
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding-right: 10px;
+    min-width: 0;
+    background: #fff;
+    opacity: 0;
+    z-index: 2;
+    -webkit-transition: opacity 0.1s ease-in;
+    transition: opacity 0.1s ease-in;
+}
