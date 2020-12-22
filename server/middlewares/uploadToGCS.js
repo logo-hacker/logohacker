@@ -20,7 +20,7 @@ const sendUploadToGCS = (req, res, next) => {
     return next()
   }
 
-  const gcsname = Date.now() + req.file.originalname
+  const gcsname = Date.now() + req.file.originalname  
   const file = bucket.file(gcsname)
 
   const stream = file.createWriteStream({
@@ -53,6 +53,12 @@ const Multer = require('multer'),
         }
         // dest: '../images'
       })
+
+const toBlob = (req, res, next) => {
+  req.file.userLogo = formDataToUpload.image
+
+  next()
+}
 
 module.exports = {
   getPublicUrl,

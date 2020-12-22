@@ -10,8 +10,8 @@ const logoSchema = new Schema({
     image_url: {
         type: String,
         required: true
-    },
-    userId : { type: Schema.Types.ObjectId, ref: 'Logo' }
+    }
+    // userId : { type: Schema.Types.ObjectId, ref: 'Logo' }
 }, {timestamps:true} );
 
 const Logo = mongoose.model('Logo', logoSchema)
